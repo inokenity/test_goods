@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('characteristics', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('goods_id')->constrained('goods')->onDelete('cascade');
+            $table->string('name');
+            $table->string('value');
             $table->timestamps();
         });
     }
