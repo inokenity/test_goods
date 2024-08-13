@@ -9,8 +9,6 @@ class Good extends Model
 {
     use HasFactory;
 
-    protected $table = 'goods';
-
     protected $fillable = [
         'category_id', 'sku', 'name', 'prices', 'description', 'is_published'
     ];
@@ -18,8 +16,6 @@ class Good extends Model
     protected $casts = [
         'prices' => 'array',
     ];
-
-    public $timestamps = true;
 
     public function category()
     {

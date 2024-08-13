@@ -9,16 +9,12 @@ class Stock extends Model
 {
     use HasFactory;
 
-    protected $table = 'stocks';
-
     protected $fillable = [
         'goods_id', 'count', 'address'
     ];
 
-    public $timestamps = true;
-
     public function goods()
     {
-        return $this->belongsTo(Goods::class, 'goods_id');
+        return $this->belongsTo(Good::class, 'goods_id');
     }
 }

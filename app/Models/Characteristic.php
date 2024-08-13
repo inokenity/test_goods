@@ -9,16 +9,12 @@ class Characteristic extends Model
 {
     use HasFactory;
 
-    protected $table = 'characteristics';
-
     protected $fillable = [
         'goods_id', 'name', 'value'
     ];
 
-    public $timestamps = true;
-
     public function goods()
     {
-        return $this->belongsTo(Goods::class, 'goods_id');
+        return $this->belongsTo(Good::class, 'goods_id');
     }
 }
