@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('goods', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('sku')->unique();
+            $table->string('name');
+            $table->json('prices');
+            $table->text('description')->nullable();
+            $table->boolean('is_published')->default(true);
             $table->timestamps();
         });
     }
