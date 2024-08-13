@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('goods_id')->constrained('goods')->onDelete('cascade');
+            $table->integer('count');
+            $table->string('address');
             $table->timestamps();
         });
     }
