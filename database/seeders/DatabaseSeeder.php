@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        \App\Models\Category::factory(2)->create();
+        \App\Models\Category::factory(3)->create();
         \App\Models\Good::factory(20)->create();
         \App\Models\Stock::factory(2)->create(); 
         \App\Models\Characteristic::factory(4)->create();
